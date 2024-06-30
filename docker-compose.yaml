@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     expose:
       - "25"
-      - "8080"
+      - "8880"
       - "4443"
       - "110"
       - "143"
