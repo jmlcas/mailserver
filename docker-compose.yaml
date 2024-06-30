@@ -20,6 +20,8 @@ services:
       - h=mail.tudominio.com # Dirección del servidor de mail hosting
       - HTTP_PORT=8880
       - HTTPS_PORT=4443
-      - DISABLE_CLAMAV=TRUE
+      - DISABLE_CLAMAV=FALSE  # TRUE 
+      - DISABLE_RSPAMD=FALSE  # TRUE 
+      - DISABLE_ROUNDCUBE=FALSE  # TRUE
     volumes:
       - ./mail:/data
