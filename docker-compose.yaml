@@ -1,0 +1,25 @@
+services:
+
+  mailserver:
+    image: analogic/poste.io
+    container_name: mailserver
+    restart: unless-stopped
+    network_mode: "host"
+    expose:
+      - "25"
+      - "8080"
+      - "4443"
+      - "110"
+      - "143"
+      - "465"
+      - "587"
+      - "993"
+      - "995"
+    environment:
+      - TZ=Europe/Madrid
+      - h=mail.tudominio.com # Dirección del servidor de mail hosting
+      - HTTP_PORT=8880
+      - HTTPS_PORT=4443
+      - DISABLE_CLAMAV=TRUE
+    volumes:
+      - ./mail:/data
